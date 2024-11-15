@@ -1,0 +1,27 @@
+spring:
+  application:
+      name: uaa-service
+
+  ldap:
+    base: "dc=example,dc=com"  # Base DN for your LDAP directory
+    urls: "ldap://ldap.forumsys.com:389"  # URL of the online LDAP test server
+    username: "cn=read-only-admin,dc=example,dc=com"  # Admin DN (or bind user)
+    password: "password"  # Password for the bind user
+
+  security:
+    ldap:
+      enabled: true  # Enable LDAP security
+
+  logging:
+    level:
+      root: INFO
+      org.springframework.security: DEBUG  # Enable debug logging for Spring Security (useful for debugging)
+
+server:
+    port: 8702
+
+eureka:
+   client:
+      serviceUrl:
+          defaultZone: http://localhost:8762/eureka
+
